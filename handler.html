@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMMS_Handler</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/stylehandler.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                      <span class="icon">
+                        <img src="assets/imgs/customer01.jpg" class="user" alt="">
+                    </span>
+                        <span class="title">User Name</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="handler.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="assets">
+              <img src="assets/imgs/Blue-Wave-PNG-File.webp" alt="">
+            </div>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+            </div>
+
+           <div class="section">
+            <!-- ================ Order Details List ================= -->
+           <div class="details">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Your Tickets <span style="font-size: 15px; font-weight: 500; color: lightgreen">(Click on Pending Tickets for detailed view)</span></h2>
+                </div>
+                <table>
+                  <thead>
+                    <tr>
+                        <td>Ticket ID</td>
+                        <td>Handler Name</td>
+                        <td>Title of Issue</td>
+                        <td>Date</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                  
+                    <tr>
+                        <td>01</td>
+                        <td>Souvik Ghosh</td>
+                        <td>System</td>
+                        <td>11/10/2023</td>
+                        <td><a class="status delivered" href="#sec01">Completed</a></td>
+                    </tr>
+                    <tr>
+                      <td>01</td>
+                      <td>Souvik Ghosh</td>
+                      <td>System</td>
+                      <td>11/10/2023</td>
+                      <td><a class="status pending" href="#sec01">Pending</a></td>
+                  </tr>
+                  <tr>
+                    <td>01</td>
+                    <td>Souvik Ghosh</td>
+                    <td>System</td>
+                    <td>11/10/2023</td>
+                    <td><a class="status delivered" href="#sec01">Completed</a></td>
+                </tr> 
+                <tr>
+                  <td>01</td>
+                  <td>Souvik Ghosh</td>
+                  <td>System</td>
+                  <td>11/10/2023</td>
+                  <td><span class="status inProgress">In Progress</span></td>
+              </tr>
+                    <tr>
+                        <td>01</td>
+                        <td>Souvik Ghosh</td>
+                        <td>System</td>
+                        <td>11/10/2023</td>
+                        <td><a class="status delivered" href="#sec01">Completed</a></td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+        
+          </div>
+          <div id="sec01"></div>
+          <div class="signup-form">
+            <h2>Raise Your Ticket<button class="button">
+              <svg class="svg-icon" fill="none" height="16" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><g  stroke-linecap="round" stroke-width="1.5"><path d="m3.33337 10.8333c0 3.6819 2.98477 6.6667 6.66663 6.6667 3.682 0 6.6667-2.9848 6.6667-6.6667 0-3.68188-2.9847-6.66664-6.6667-6.66664-1.29938 0-2.51191.37174-3.5371 1.01468"></path><path d="m7.69867 1.58163-1.44987 3.28435c-.18587.42104.00478.91303.42582 1.0989l3.28438 1.44986"></path></g></svg>
+              <span class="lable">Reset form</span>
+            </button></h2>
+            <form class="fancy-form" onsubmit="return false;">
+                <div class="fancy-text-form" style="margin-top:20px;">
+                    <input type="text message" id="message" placeholder="Long description about your problem"/>
+                      </div>
+                <div class="fancy-text-form">
+                    <input type="text" name="name" id="u" class="white-blue-box form-signup" />
+                    <label>Short title of issue</label>
+                  </div>
+                  <div class="fancy-text-form">
+        <label>Want to increase or decrease time? </label>
+        <div class="form-group">
+        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+        <input type="number" id="number" value="0" />
+        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+        </div>
+    </div>
+    <div class="fancy-text-form">
+        <button type="btn" class="button1">
+          Submit
+      </button>
+      </div>
+</div>
+    <script>
+   function increaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  document.getElementById('number').value = value;
+}
+
+function decreaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value < 1 ? value = 1 : '';
+  value--;
+  document.getElementById('number').value = value;
+}
+</script>
+            </form>
+          </div>
+          <script>
+            $(function() {
+        
+        $('.fancy-form .fancy-text-form input, .fancy-form .fancy-text-form select').focusout(function() {
+        
+        var focusFancy = $(this).val();
+        
+        if (focusFancy === "") {
+        
+        $(this).removeClass('focusFancy');
+        
+        } else {
+        
+        $(this).addClass('focusFancy');
+        $(this).removeClass('error');
+        
+        }
+        
+        });
+        
+        $('.submit-form').on('click', function() {
+        $('.form-signup').each(function() {
+        var $this = $(this);
+        
+        if ($this.val().length === 0) {
+        $this.addClass('error');
+        }
+        })
+        });
+        });
+          </script>
+        <script>
+          $(document).ready(function() {
+              // Hide the table content and recentOrders section initially
+              $(".accordion-content").hide();
+              
+              $(".accordion-trigger").click(function() {
+                  $(".accordion-content").slideToggle();
+                  $(".recentOrders").slideToggle(); // Toggle the recentOrders section
+                  $(this).find('.arrow').toggleClass('rotate');
+              });
+          });
+        </script>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Hide the table content initially
+        $(".accordion-content").hide();
+
+        // Toggle the table content when the heading is clicked
+        $(".accordion-trigger").click(function() {
+            $(".accordion-content").slideToggle();
+        });
+    });
+</script>
+    <!-- =========== Scripts =========  -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
